@@ -46,7 +46,7 @@ abstract class MessageClient{
   public static function isSent($msg_name,$flag,$token){
     $headers = array('auth_token: ' . $token);
     $ch = curl_init();
-    curl_setopt($ch,CURLOPT_URL,self::MSGEND . "sent");
+    curl_setopt($ch,CURLOPT_URL,self::MSGEND . "sent/" . $msg_name . "/" . $flag);
     curl_setopt($ch,CURLOPT_HTTPHEADER,$headers);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
     $output = curl_exec($ch);
