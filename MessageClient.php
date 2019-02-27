@@ -51,6 +51,11 @@ abstract class MessageClient{
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
     $output = curl_exec($ch);
     curl_close($ch);
-    return $output;
+    if($output === 'true'){
+      return true;
+    }elseif(isset(json_decode($output)->error)){
+      throw new \Exception(json_decode($output)->error);
+    }
+    return false;
   }
 }
