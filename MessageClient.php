@@ -32,7 +32,8 @@ abstract class MessageClient{
   }
   public static function send($message,$token){
     $headers = array('auth_token: ' . $token);
-    $post = "message=" . base64_encode(serialize($message));
+    //$post = "message=" . base64_encode(serialize($message));
+    $post = json_encode($message);
     $ch = curl_init();
     curl_setopt($ch,CURLOPT_URL,self::MSGEND . "send");
     curl_setopt($ch,CURLOPT_POST,1);
