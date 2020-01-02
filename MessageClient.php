@@ -2,7 +2,7 @@
 
 abstract class MessageClient{
 
-  const MSGEND = 'http://api.outlawdesigns.io:9667/';
+  const MSGEND = 'https://api.outlawdesigns.io:9667/';
   const AUTHERR = 'Auth token required to send message';
 
   public static function authenticate($username,$password){
