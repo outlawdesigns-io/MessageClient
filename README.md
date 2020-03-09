@@ -2,7 +2,7 @@
 
 MessageClient is an abstract class that provides access to <a href="https://github.com/outlawdesigns-io/MessengerService">MessengerService</a>.
 
-MessageClient can be extended into concrete implementations, but its basic methods are static and call be called without a concrete implementation or an initialization.
+MessageClient can be extended into concrete implementations, but its basic methods are static and can be called without a concrete implementation or an initialization.
 
 ## Requirements
 
